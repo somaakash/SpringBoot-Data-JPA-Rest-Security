@@ -69,6 +69,22 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 ```
 
 ---
+## 🔐 Spring Security Configuration
+
+```java
+@Configuration
+@EnableWebSecurity
+public class Config {
+
+    @Bean
+    public SecurityFilterChain configure(HttpSecurity security) {
+        security.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+        security.csrf(csrf -> csrf.disable());
+        security.httpBasic(Customizer.withDefaults());
+        return security.build();
+    }
+}
+```
 
 ### Security Features
 
