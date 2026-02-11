@@ -70,23 +70,6 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 
 ---
 
-## 🔐 Spring Security Configuration
-
-```java
-@Configuration
-@EnableWebSecurity
-public class Config {
-
-    @Bean
-    public SecurityFilterChain configure(HttpSecurity security) {
-        security.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
-        security.csrf(csrf -> csrf.disable());
-        security.httpBasic(Customizer.withDefaults());
-        return security.build();
-    }
-}
-```
-
 ### Security Features
 
 - All endpoints require authentication
@@ -120,7 +103,7 @@ http://localhost:8080/api
 
 **POST** `/api/add`
 <p align="center">
-  <img src="Screenshot/Post.PNG" width="45%" />
+  <img src="screenshot/Post.PNG" width="45%" />
 </p>
 ---
 
@@ -129,7 +112,7 @@ http://localhost:8080/api
 **PUT** `/api/update?empId=1`
 
 <p align="center">
-  <img src="Screenshot/Put.PNG" width="45%" />
+  <img src="screenshot/Put.PNG" width="45%" />
 </p>
 
 
@@ -140,7 +123,7 @@ http://localhost:8080/api
 **DELETE** `/api/delete?empId=1`
 
 <p align="center">
-  <img src="Screenshot/Delete.PNG" width="45%" />
+  <img src="screenshot/Delete.PNG" width="45%" />
 </p>
 ---
 
@@ -149,7 +132,7 @@ http://localhost:8080/api
 **GET** `/api/get?empId=1`
 
 <p align="center">
-  <img src="Screenshot/Get.PNG" width="45%" />
+  <img src="screenshot/Get.PNG" width="45%" />
 </p>
 
 ---
